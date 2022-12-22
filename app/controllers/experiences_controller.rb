@@ -1,2 +1,30 @@
 class ExperiencesController < ApplicationController
+
+    def index
+        render json: Experience.all
+    end
+
+    def show
+        experience = Experience.find_by_id(params[:id])
+        if experience
+            render json: experience
+        else
+            render json: {error: 'Experience not found'}, status: :not_found
+        end
+    end
+
+    def create
+        experience = Experience.create(experience_params)
+        if experience.valid?
+            render json: experience
+        else 
+            render json: {errors: experience.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
+
+
+    private
+    def experience_params
+        params.permit(:name, :location, :description, :price, :image_url)
+    end
 end
