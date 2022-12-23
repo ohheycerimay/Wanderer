@@ -3,7 +3,7 @@ import Home from './Components/Home';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Search from './Components/Search';
-import { Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import NewUserForm from './Components/NewUserForm';
 import UserLogin from './Components/UserLogin';
 
