@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   # post "/userlogin", to: "users#create"
   # get "/me", to: "users#show"
-  # post "/userlogin", to: "sessions#create"
-  # delete "/logout", to: "sessions#destroy"
+  post "/userlogin", to: "sessions#create"
+  delete "/userlogin", to: "sessions#destroy"
   # post "/signup", to: "sessions#create"
 
 end

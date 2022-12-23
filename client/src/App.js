@@ -16,9 +16,6 @@ function App() {
     fetch('/experiences')
     .then(res => res.json())
     .then(data => setExperiences(data))
-    fetch('/users')
-    .then(res => res.json())
-    .then(data => setUsers(data))
   }, [])
 
 

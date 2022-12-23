@@ -3,5 +3,5 @@ class User < ApplicationRecord
     has_many :experiences, through: :bookings
 
     validates :username, presence: true, uniqueness: true
-    # has_secure_password
+    has_secure_password
 end
