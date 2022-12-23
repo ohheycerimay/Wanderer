@@ -35,7 +35,7 @@ class ExperiencesController < ApplicationController
     def update 
         experience = Experience.find_by_id(params[:id])
         if experience
-            experience.update(:likes)
+            experience.update(likes)
             render json: experience
         else
             render json: {error: 'Experience not found'}, status: :not_found
@@ -46,5 +46,8 @@ class ExperiencesController < ApplicationController
     private
     def experience_params
         params.permit(:name, :location, :description, :price, :image_url)
+    end
+    def likes
+        params.permit(:likes)
     end
 end
