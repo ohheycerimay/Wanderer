@@ -3,10 +3,11 @@ class BookingsController < ApplicationController
     def show
         booking = Booking.find(params[:id])
         render json: booking, status: :ok
+        # figure out what to do ????
     end
 
     def create
-        booking = Booking.create!(experiences_params)
+        booking = @current_user.bookings.create!(bookings_params)
         render json: booking, status: :ok
     end
 
@@ -17,16 +18,16 @@ class BookingsController < ApplicationController
 
     def update
         bookings =Booking.find(params[:id])
-        bookings.update(experience_params)
+        bookings.update(bookings_params)
         render json: bookings, status: :accepted
     end
 
     private
-    def experiences_params
+    def bookings_params
         params.permit(:experience_id, :user_id, :datetime, :people_count, :total_price)
     end
     def not_found
         render json: {error: "Booking not found"}
-      end
+    end
 
 end

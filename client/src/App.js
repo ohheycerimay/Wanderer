@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from'react';
 import Home from './Components/Home';
 import './App.css';
+import NavBar from './Components/NavBar';
+
 
 function App() {
   const [experiences, setExperiences] = useState([])
@@ -15,8 +17,9 @@ function App() {
 
   return (
     <div>
+      <NavBar/>
+      <Search/>
       <Home experiences = {experiences}/>
-
     </div>
   )
 }
