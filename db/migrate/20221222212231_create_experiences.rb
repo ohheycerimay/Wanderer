@@ -7,6 +7,7 @@ class CreateExperiences < ActiveRecord::Migration[6.1]
       t.integer :price
       t.string :image_url
       t.string :includes
+      t.integer :likes
 
       t.timestamps
     end

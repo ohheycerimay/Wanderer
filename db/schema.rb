@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_212355) do
     t.integer "price"
     t.string "image_url"
     t.string "includes"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

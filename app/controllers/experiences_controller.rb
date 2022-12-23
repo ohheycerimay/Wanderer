@@ -22,6 +22,26 @@ class ExperiencesController < ApplicationController
         end
     end
 
+    def destroy
+        experience = Experience.find_by_id(params[:id])
+        if experience
+            experience.destroy
+            head :no_content
+        else 
+            render json: {error: 'Experience not found'}, status: :not_found
+        end
+    end
+
+    def update 
+        experience = Experience.find_by_id(params[:id])
+        if experience
+            experience.update(:likes)
+            render json: experience
+        else
+            render json: {error: 'Experience not found'}, status: :not_found
+        end
+    end
+
 
     private
     def experience_params
