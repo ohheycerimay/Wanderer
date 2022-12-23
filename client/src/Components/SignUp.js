@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 
 
-function NewUserForm({ onLogin }) {
+function SignUp({onLogin}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  // const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [bio, setBio] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+console.log(errors)
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/signup", {
+    fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,16 +21,21 @@ function NewUserForm({ onLogin }) {
       body: JSON.stringify({
         username,
         password,
-        password_confirmation: passwordConfirmation,
+        // password_confirmation: passwordConfirmation,
         image_url: imageUrl,
-        bio,
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => {
+          console.log(err)
+          setErrors(err.errors) 
+          
+        });
+        
+      
       }
     });
   }
@@ -57,7 +61,7 @@ function NewUserForm({ onLogin }) {
           autoComplete="current-password"
         />
   
-
+{/* 
         <label htmlFor="password">Password Confirmation</label>
         <input
           type="password"
@@ -65,7 +69,7 @@ function NewUserForm({ onLogin }) {
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
-        />
+        /> */}
     
         <label htmlFor="imageUrl">Profile Image</label>
         <input
@@ -75,22 +79,15 @@ function NewUserForm({ onLogin }) {
           onChange={(e) => setImageUrl(e.target.value)}
         />
     
-        <label htmlFor="bio">Bio</label>
-        <textarea
-          rows="3"
-          id="bio"
-          value={bio}
-          onChange={(e) => setBio(e.target.value)}
-        />
-    
+
         <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
      
-        {errors.map((err) => (
+        {/* {errors.map((err) => (
           <error key={err}>{err}</error>
-        ))}
+        ))} */}
 
     </form>
   );
 }
 
-export default NewUserForm;
+export default SignUp;

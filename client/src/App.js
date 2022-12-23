@@ -4,17 +4,21 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import Search from './Components/Search';
 import {Route, Routes} from 'react-router-dom';
-import NewUserForm from './Components/NewUserForm';
+import SignUp from './Components/SignUp';
 import UserLogin from './Components/UserLogin';
 
 
 
 function App() {
   const [experiences, setExperiences] = useState([])
+  const [users, setUsers] = useState([])
   useEffect(() => {
     fetch('/experiences')
     .then(res => res.json())
     .then(data => setExperiences(data))
+    fetch('/users')
+    .then(res => res.json())
+    .then(data => setUsers(data))
   }, [])
 
 
@@ -27,7 +31,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home experiences = {experiences}/>} />
         {/* <Home experiences = {experiences}/> */}
-        <Route exact path="/newuserform" element={<NewUserForm/>}/>
+        <Route exact path="/signup" element={<SignUp onLogin={setUsers}/>}/>
         <Route exact path="/userlogin" element={<UserLogin/>}/>
       </Routes>
     </div>
