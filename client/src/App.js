@@ -28,8 +28,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home experiences = {experiences}/>} />
         {/* <Home experiences = {experiences}/> */}
-        <Route exact path="/signup" element={<SignUp onLogin={setUsers}/>}/>
-        <Route exact path="/userlogin" element={<UserLogin/>}/>
+        <Route exact path="/signup" element={<SignUp onSignUp={setUsers}/>}/>
+        <Route exact path="/userlogin" element={<UserLogin onLogin={setUsers}/>}/>
       </Routes>
     </div>
 
