@@ -41,3 +41,22 @@
   width: 200px;
   height: 200px;
 }
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  row-gap: 30px;
+  column-gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0);
+  transition: 0.3s;
+  width: 40%;
+  width: calc(33% - 2rem);
+  flex-basis: auto;
+  border: 3px solid #e3b093;
+  color: #e3caab;
+} 

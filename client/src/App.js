@@ -6,7 +6,7 @@ import Search from './Components/Search';
 import {Route, Routes} from 'react-router-dom';
 import SignUp from './Components/SignUp';
 import UserLogin from './Components/UserLogin';
-
+import ExperienceShow from './Components/ExperienceShow';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
         {/* <Home experiences = {experiences}/> */}
         <Route exact path="/signup" element={<SignUp onSignUp={setUsers}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUsers}/>}/>
+        <Route path="/experience/:id" element= {<ExperienceShow/>}/>  
       </Routes>
     </div>
 
