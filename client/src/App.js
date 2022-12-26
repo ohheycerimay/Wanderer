@@ -31,6 +31,9 @@ function App() {
         <Route exact path="/signup" element={<SignUp onSignUp={setUsers}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUsers}/>}/>
         <Route path="/experience/:id" element= {<ExperienceShow/>}/>  
+        {/* <Route path="*" element={<NotFound />} /> */}
+
+        
       </Routes>
     </div>
 
