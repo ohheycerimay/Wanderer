@@ -21,6 +21,7 @@ def show
 
 end
 
+
 private
   def user_params
     params.permit(:username, :password, :profile_pic)

@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
     
-    def index
-        render json: Booking.all
-    end
+    # def index
+    #     render json: Booking.all
+    # end
 
     def show
         booking = Booking.find_by_id(params[:id])
