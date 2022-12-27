@@ -6,9 +6,9 @@ Booking.destroy_all
 
 puts "Seeding users...👥"
 
-u1= User.create(username:"ohheycerimay", password:"1234", image_url:"https://i0.wp.com/bkreader.com/wp-content/uploads/2014/04/g-train.jpg?fit=500%2C380&ssl=1")
-u2= User.create(username:"luimatthew", password:"5678", image_url:"https://media.istockphoto.com/id/1309040743/photo/travel-planning-background.jpg?b=1&s=170667a&w=0&k=20&c=oYsf4vJ1lCmKJAwq1DAIte1KH56qCmiyNDvoysDHUhQ=")
-u3= User.create(username:"paigetetz", password:"9876", image_url:"http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg")
+u1= User.create(username:"ohheycerimay", password:"1234", profile_pic:"https://i0.wp.com/bkreader.com/wp-content/uploads/2014/04/g-train.jpg?fit=500%2C380&ssl=1")
+u2= User.create(username:"luimatthew", password:"5678", profile_pic:"https://media.istockphoto.com/id/1309040743/photo/travel-planning-background.jpg?b=1&s=170667a&w=0&k=20&c=oYsf4vJ1lCmKJAwq1DAIte1KH56qCmiyNDvoysDHUhQ=")
+u3= User.create(username:"paigetetz", password:"9876", profile_pic:"http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg")
 
 puts "Users seeded!"
 
