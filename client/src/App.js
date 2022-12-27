@@ -13,20 +13,34 @@ function App() {
   const [experiences, setExperiences] = useState([])
   const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
 
-  if (!user) return <UserLogin onLogin={setUser} />;
+  // if (!user) return <UserLogin onLogin={setUser} />;
+  // useEffect(() => {
+  //   fetch('/experiences')
+  //   .then(res => res.json())
+  //   .then(data => setExperiences(data))
+  // }, []);
+
+
   useEffect(() => {
-    fetch('/experiences')
-    .then(res => res.json())
-    .then(data => setExperiences(data))
+    async function fetchData() {
+      const response1 = await fetch('/me');
+      const user = await response1.json();
+      setUser(user);
+
+      const response2 = await fetch('/experiences');
+      const experiences = await response2.json();
+      setExperiences(experiences);
+    }
+    fetchData();
   }, []);
 
 
