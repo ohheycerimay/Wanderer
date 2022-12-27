@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {useNavigate} from 'react-router-dom'
+
 
 
 function UserLogin({ onLogin }) {
@@ -6,6 +8,8 @@ function UserLogin({ onLogin }) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  let navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +23,8 @@ function UserLogin({ onLogin }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => onLogin(user),
+        navigate("/"));
       } else {
         r.json().then((err) =>{
           console.log(err);
