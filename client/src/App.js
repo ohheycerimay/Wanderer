@@ -12,6 +12,7 @@ import ExperienceShow from './Components/ExperienceShow';
 function App() {
   const [experiences, setExperiences] = useState([])
   const [user, setUser] = useState(null)
+  const [search, setSearch] = useState('')
 
   // useEffect(() => {
   //   // auto-login
@@ -43,17 +44,22 @@ function App() {
     fetchData();
   }, []);
 
+  const searchFilter = experiences.filter((eachExperience) => eachExperience.location.toLowerCase().includes(search.toLowerCase()) ||
+  eachExperience.name.toLowerCase().includes(search.toLowerCase())); 
+
+
 
   return (
     <div>
       <NavBar user={user} setUser={setUser}/>
-      <Search/>
+      <Search search={search} setSearch={setSearch}/>
       <Routes>
-        <Route exact path="/" element={<Home experiences = {experiences}/>} />
+        <Route exact path="/" element={<Home experiences = {searchFilter} search={search} setSearch={setSearch}/>} />
         {/* <Home experiences = {experiences}/> */}
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
-        <Route path="/experience/:id" element= {<ExperienceShow/>}/>  
+        <Route path="/experience/:id" element= {<ExperienceShow />}/>  
+
         {/* <Route path="*" element={<NotFound />} /> */}
 
         

@@ -19,7 +19,6 @@ function NavBar({user, setUser}) {
           {/* {loggedIn ? <h4> Hello, {user.username}</h4> : <h4>Login or Signup</h4>}
             <img className = 'profile_pic' src={user.profile_pic} alt="{user.username}" /> */}
             <Link to="/"> <span className="home-btn">Home</span></Link>
-            <Link to="/search"> <span className="search">Search</span></Link>
             <Link to="/userlogin"> <span className="login">Login</span></Link>
             <button onClick={handleLogoutClick}>Logout</button>
             <Link to="/signup"> <span className="sign-up">Sign Up</span></Link>
