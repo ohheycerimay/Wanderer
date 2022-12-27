@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div>
-      <NavBar/>
+      <NavBar user={user} setUser={setUser}/>
       <Search/>
       <Routes>
         <Route exact path="/" element={<Home experiences = {experiences}/>} />

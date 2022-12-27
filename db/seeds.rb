@@ -71,11 +71,11 @@ puts "Experiences seeded!"
 
 puts "Seeding bookings..."
 
-b1= Booking.create(user_id: u1.id, experience_id: e3.id, datetime:'06/30/2022 18:30', people_count: 2 , total_price: 950)
-b2= Booking.create(user_id: u2.id, experience_id: e11.id, datetime:'06/30/2022 18:30', people_count: 2, total_price: 3000)
-b3= Booking.create(user_id: u3.id, experience_id: e1.id, datetime:'06/30/2022 18:30', people_count: 2, total_price: 1384)
-b4= Booking.create(user_id: u1.id, experience_id: e6.id, datetime:'06/30/2022 18:30', people_count: 4, total_price: 608)
-b5= Booking.create(user_id: u2.id, experience_id: e9.id, datetime:'06/30/2022 18:30', people_count: 4, total_price: 1476)
-b6= Booking.create(user_id: u3.id, experience_id: e17.id, datetime:'06/30/2022 18:30', people_count: 4, total_price: 620)
+b1= Booking.create(user_id: u1.id, experience_id: e3.id, datetime:"06/16/2023 8:30", people_count: 2 , total_price: 950)
+b2= Booking.create(user_id: u2.id, experience_id: e11.id, datetime:"06/18/2023 12:30", people_count: 2, total_price: 3000)
+b3= Booking.create(user_id: u3.id, experience_id: e1.id, datetime:"12/04/2023 11:45", people_count: 2, total_price: 1384)
+b4= Booking.create(user_id: u1.id, experience_id: e6.id, datetime:"07/04/2023 9:00", people_count: 4, total_price: 608)
+b5= Booking.create(user_id: u2.id, experience_id: e9.id, datetime:"10/31/2023 10:45", people_count: 4, total_price: 1476)
+b6= Booking.create(user_id: u3.id, experience_id: e17.id, datetime:"11/27/2023 12:00", people_count: 4, total_price: 620)
 
 puts "Bookings seeded!"

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_212355) do
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
     t.integer "experience_id"
-    t.datetime "datetime"
+    t.string "datetime"
     t.integer "people_count"
     t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
