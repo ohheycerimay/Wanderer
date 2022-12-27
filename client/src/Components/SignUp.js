@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-
+import {useNavigate} from 'react-router-dom'
 
 function SignUp({onSignUp}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [profile_pic, setProfilePic] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 console.log(errors)
+
+let navigate = useNavigate();
+
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
@@ -22,12 +25,13 @@ console.log(errors)
         username,
         password,
         // password_confirmation: passwordConfirmation,
-        image_url: imageUrl,
+        profile_pic: profile_pic,
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onSignUp(user));
+        r.json().then((user) => onSignUp(user),
+        navigate('/'));
       } else {
         r.json().then((err) => {
           console.log(err)
@@ -42,7 +46,7 @@ console.log(errors)
 
   return (
     <form onSubmit={handleSubmit}>
-         <label htmlFor="username">Username</label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
           id="username"
@@ -71,12 +75,12 @@ console.log(errors)
           autoComplete="current-password"
         />
     
-        <label htmlFor="imageUrl">Profile Image</label>
+        <label htmlFor="profile_pic">Profile Image</label>
         <input
           type="text"
-          id="imageUrl"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
+          id="profile_pic"
+          value={profile_pic}
+          onChange={(e) => setProfilePic(e.target.value)}
         />
     
 

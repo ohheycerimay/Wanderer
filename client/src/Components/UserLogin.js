@@ -36,7 +36,7 @@ function UserLogin({ onLogin }) {
 
   return (
     <form onSubmit={handleSubmit}>
-     
+    
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -45,7 +45,7 @@ function UserLogin({ onLogin }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
- 
+
         <label htmlFor="password">Password</label>
         <input
           type="password"
@@ -54,15 +54,15 @@ function UserLogin({ onLogin }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
- 
+
         <button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
-   
+
         {/* {errors.map((err) => (
           <error key={err}>{err}</error>
         ))} */}
-     
+
     </form>
   );
 }
