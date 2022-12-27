@@ -10,7 +10,7 @@ function UserLogin({ onLogin }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("/userlogin", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

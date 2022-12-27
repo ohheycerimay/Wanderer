@@ -11,14 +11,23 @@ import ExperienceShow from './Components/ExperienceShow';
 
 function App() {
   const [experiences, setExperiences] = useState([])
-  const [users, setUsers] = useState([])
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  if (!user) return <UserLogin onLogin={setUser} />;
   useEffect(() => {
     fetch('/experiences')
     .then(res => res.json())
     .then(data => setExperiences(data))
-  }, [])
-
-
+  }, []);
 
 
   return (
@@ -28,8 +37,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home experiences = {experiences}/>} />
         {/* <Home experiences = {experiences}/> */}
-        <Route exact path="/signup" element={<SignUp onSignUp={setUsers}/>}/>
-        <Route exact path="/userlogin" element={<UserLogin onLogin={setUsers}/>}/>
+        <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
+        <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
         <Route path="/experience/:id" element= {<ExperienceShow/>}/>  
         {/* <Route path="*" element={<NotFound />} /> */}
 

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function SignUp({onSignUp}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +13,7 @@ console.log(errors)
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/users", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ console.log(errors)
           autoComplete="current-password"
         />
   
-{/* 
+
         <label htmlFor="password">Password Confirmation</label>
         <input
           type="password"
@@ -69,7 +69,7 @@ console.log(errors)
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
-        /> */}
+        />
     
         <label htmlFor="imageUrl">Profile Image</label>
         <input
@@ -81,7 +81,7 @@ console.log(errors)
     
 
         <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
-     
+
         {/* {errors.map((err) => (
           <error key={err}>{err}</error>
         ))} */}
