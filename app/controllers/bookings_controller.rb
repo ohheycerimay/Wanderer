@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+    
     def index
         render json: Booking.all
     end

@@ -23,7 +23,7 @@ end
 
 private
   def user_params
-    params.permit(:username, :password, :image_url)
+    params.permit(:username, :password, :profile_pic)
 
   end
 
