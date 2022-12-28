@@ -8,6 +8,7 @@ import SignUp from './Components/SignUp';
 import UserLogin from './Components/UserLogin';
 import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
+import CreateExperience from './Components/CreateExperience';
 
 function App() {
   const [experiences, setExperiences] = useState([])
@@ -30,6 +31,14 @@ function App() {
   const searchFilter = experiences.filter((eachExperience) => eachExperience.location.toLowerCase().includes(search.toLowerCase()) ||
   eachExperience.name.toLowerCase().includes(search.toLowerCase())); 
 
+  function handleDeleteExperience(id) {
+    const updateExperienceArray = experiences.filter(experience => experience.id !== id)
+    setExperiences(updateExperienceArray)
+  }
+
+
+
+
 
 
   return (
@@ -41,8 +50,9 @@ function App() {
         {/* <Home experiences = {experiences}/> */}
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
-        <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch}/>}/>
+        <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience}/>}/>
         <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
+        <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/>  
 
         {/* <Route path="*" element={<NotFound />} /> */}
 

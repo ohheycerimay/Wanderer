@@ -23,6 +23,7 @@ function NavBar({user, setUser}) {
             <button className="button" onClick={handleLogoutClick}>Logout</button>
             <NavLink className="button" to="/signup">Sign Up</NavLink>
             <NavLink className="button" to="/experience">Experiences</NavLink>
+            <NavLink className="create-experience" to="/create-experience"> Create Your Own Experience</NavLink>
             </div>
         </div>
     );
