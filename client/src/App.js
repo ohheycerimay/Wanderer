@@ -35,13 +35,13 @@ function App() {
   return (
     <div>
       <NavBar user={user} setUser={setUser}/>
-      <Search search={search} setSearch={setSearch}/>
+
       <Routes>
-        <Route exact path="/" element={<Home experiences = {searchFilter} search={search} setSearch={setSearch}/>} />
+        <Route exact path="/" element={<Home  />} />
         {/* <Home experiences = {experiences}/> */}
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
-        <Route path="/experience" element={<ExperiencesContainer experiences={experiences}/>}/>
+        <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch}/>}/>
         <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
 
         {/* <Route path="*" element={<NotFound />} /> */}
