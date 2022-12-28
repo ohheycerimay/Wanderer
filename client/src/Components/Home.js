@@ -2,12 +2,12 @@ import React from 'react';
 import ExperiencesContainer from './ExperiencesContainer';
 import Search from './Search';
 
-function Home({experiences}) {
+function Home() {
     
     return (
         <div>
             {/* <Search/> */}
-            <ExperiencesContainer experiences = {experiences}/>
+           
             
         </div>
     );

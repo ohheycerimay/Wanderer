@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .tile_image{
   width: 200px;
@@ -60,3 +60,86 @@
   border: 3px solid #e3b093;
   color: #e3caab;
 } 
+/* CSS */
+.button {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 6%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button:hover:after {
+  transform: translate(0, 0);
+}
+
+.button:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+}
+
+body {
+    animation: changeImage 60s infinite; /* Animation name and duration */
+    background-size: cover; /* Cover the entire element */
+    background-repeat: no-repeat; /* Do not repeat the image */
+  }
+  
+  /* Keyframes for the animation */
+  @keyframes changeImage {
+    0% {
+      background-image: url('https://www.travelandleisure.com/thmb/7vHDx6UqUNlqFeNkynyw92xwmmw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lofoten-islands-norway-aurora-borealis-northern-lights-NORWAYLIGHTS1017-20d82f5331f342099cdb418e95809dad.jpg');
+    }
+    25% {
+      background-image: url('https://images.unsplash.com/photo-1523496922380-91d5afba98a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80 ');
+    }
+    50% {
+      background-image: url('https://i.ytimg.com/vi/q1CctfCfVu8/maxresdefault.jpg');
+    }
+    75% {
+      background-image: url('https://et-website.s3.amazonaws.com/uploads/2018/08/Enchanting-Travels-South-America-Tours-Aerial-View-of-Iguazu-Falls.jpg');
+    }
+    100% {
+      background-image: url('https://quiltripping.com/wp-content/uploads/2018/05/DSC_0922-1200x795.jpg');
+    }
+  }

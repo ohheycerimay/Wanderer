@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 function NavBar({user, setUser}) {
@@ -18,10 +18,11 @@ function NavBar({user, setUser}) {
         <div className="nav">
           {/* {loggedIn ? <h4> Hello, {user.username}</h4> : <h4>Login or Signup</h4>}
             <img className = 'profile_pic' src={user.profile_pic} alt="{user.username}" /> */}
-            <Link to="/"> <span className="home-btn">Home</span></Link>
-            <Link to="/userlogin"> <span className="login">Login</span></Link>
-            <button onClick={handleLogoutClick}>Logout</button>
-            <Link to="/signup"> <span className="sign-up">Sign Up</span></Link>
+            <NavLink className="button" to="/">Home</NavLink>
+            <NavLink className="button" to="/userlogin">Login</NavLink>
+            <button className="button" onClick={handleLogoutClick}>Logout</button>
+            <NavLink className="button" to="/signup">Sign Up</NavLink>
+            <NavLink className="button" to="/experience">Experiences</NavLink>
             </div>
         </div>
     );

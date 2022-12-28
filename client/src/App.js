@@ -7,29 +7,12 @@ import {Route, Routes} from 'react-router-dom';
 import SignUp from './Components/SignUp';
 import UserLogin from './Components/UserLogin';
 import ExperienceShow from './Components/ExperienceShow';
-
+import ExperiencesContainer from './Components/ExperiencesContainer';
 
 function App() {
   const [experiences, setExperiences] = useState([])
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState('')
-
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
-
-  // if (!user) return <UserLogin onLogin={setUser} />;
-  // useEffect(() => {
-  //   fetch('/experiences')
-  //   .then(res => res.json())
-  //   .then(data => setExperiences(data))
-  // }, []);
-
 
   useEffect(() => {
     async function fetchData() {
@@ -58,7 +41,8 @@ function App() {
         {/* <Home experiences = {experiences}/> */}
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
-        <Route path="/experience/:id" element= {<ExperienceShow />}/>  
+        <Route path="/experience" element={<ExperiencesContainer experiences={experiences}/>}/>
+        <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
 
         {/* <Route path="*" element={<NotFound />} /> */}
 
