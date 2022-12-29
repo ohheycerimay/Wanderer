@@ -26,6 +26,7 @@ function NavBar({user, setUser}) {
             <NavLink className="button" to="/">Home</NavLink>
             <NavLink className="button" to="/experience">Experiences</NavLink>
             <NavLink className="button" to="/create-experience"> Create Experience</NavLink>
+            <NavLink className="button" to="/bookings"> My Bookings</NavLink>
             </div>
         </div>
     );

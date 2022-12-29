@@ -10,11 +10,14 @@ import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
 import CreateExperience from './Components/CreateExperience';
 import NotFound from './Components/NotFound';
+import Booking from './Components/Booking';
+
 
 function App() {
   const [experiences, setExperiences] = useState([])
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState('')
+  const [bookings, setBookings] = useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -24,7 +27,7 @@ function App() {
       // console.log(user);
       const response2 = await fetch('/experiences');
       const experiences = await response2.json();
-      setExperiences(experiences);
+      console.log(experiences);
     }
     fetchData();
   }, []);
@@ -37,6 +40,11 @@ function App() {
     setExperiences(updateExperienceArray)
   }
 
+  useEffect(()=>{
+    fetch("/bookings")
+    .then(response => response.json())
+    .then(data =>console.log(data))
+  },[])
 
 
 
@@ -55,8 +63,8 @@ function App() {
         <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
         <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/>  
         <Route path="*" element={<NotFound />} />
-
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="/bookings" element={<Booking/>}/>
+        <Route path="*" element={<NotFound />} />
 
         
       </Routes>

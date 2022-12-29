@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
+    before_action  only:[:index]
     
-    # def index
-    #     render json: Booking.all
-    # end
+    def index
+        render json: Booking.all
+    end
 
     def show
         booking = Booking.find_by_id(params[:id])
@@ -43,6 +44,7 @@ class BookingsController < ApplicationController
     end 
 
     private
+   
 
     def booking_params
         params.permit(:experience_id, :user_id, :datetime, :people_count, :total_price)
