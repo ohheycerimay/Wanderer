@@ -15,15 +15,17 @@ function NavBar({user, setUser}) {
       }
     return (
       <div>
-        <div className="nav">
+        <div className="nav nav1">
+          <NavLink className="button" to="/userlogin">Login</NavLink>
+          <button className="button" onClick={handleLogoutClick}>Logout</button>
+          <NavLink className="button" to="/signup">Sign Up</NavLink>
+        </div>
+        <div className="nav nav2">
           {/* {loggedIn ? <h4> Hello, {user.username}</h4> : <h4>Login or Signup</h4>}
             <img className = 'profile_pic' src={user.profile_pic} alt="{user.username}" /> */}
             <NavLink className="button" to="/">Home</NavLink>
-            <NavLink className="button" to="/userlogin">Login</NavLink>
-            <button className="button" onClick={handleLogoutClick}>Logout</button>
-            <NavLink className="button" to="/signup">Sign Up</NavLink>
             <NavLink className="button" to="/experience">Experiences</NavLink>
-            <NavLink className="create-experience" to="/create-experience"> Create Your Own Experience</NavLink>
+            <NavLink className="button" to="/create-experience"> Create Experience</NavLink>
             </div>
         </div>
     );

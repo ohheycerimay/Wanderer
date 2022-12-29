@@ -120,26 +120,46 @@
 }
 
 body {
-    animation: changeImage 60s infinite; /* Animation name and duration */
-    background-size: cover; /* Cover the entire element */
-    background-repeat: no-repeat; /* Do not repeat the image */
+  animation: changeImage 30s infinite; 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+}
+
+
+@keyframes changeImage {
+  0% {
+    background-image: url('https://www.travelandleisure.com/thmb/7vHDx6UqUNlqFeNkynyw92xwmmw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lofoten-islands-norway-aurora-borealis-northern-lights-NORWAYLIGHTS1017-20d82f5331f342099cdb418e95809dad.jpg');
   }
+  25% {
+    background-image: url('https://images.unsplash.com/photo-1523496922380-91d5afba98a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80 ');
+  }
+  50% {
+    background-image: url('https://media.cntraveler.com/photos/63483e15ef943eff59de603a/16:9/w_3000,h_1687,c_limit/New%20York%20City_GettyImages-1347979016.jpg');
+  }
+  75% {
+    background-image: url('https://et-website.s3.amazonaws.com/uploads/2018/08/Enchanting-Travels-South-America-Tours-Aerial-View-of-Iguazu-Falls.jpg');
+  }
+  100% {
+    background-image: url('https://wallpapercave.com/wp/wp10834624.jpg');
+  }
+}
+
+.nav {
+  /* background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm28-marble-kung-088-job598.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=1f8bff18c4ea827cecbbb5c3f77e9f66"); */
+  /* border: 2px solid rgb(250, 186, 117); */
+  display: flex;
+  touch-action: manipulation;
+  justify-content: center;
   
-  /* Keyframes for the animation */
-  @keyframes changeImage {
-    0% {
-      background-image: url('https://www.travelandleisure.com/thmb/7vHDx6UqUNlqFeNkynyw92xwmmw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lofoten-islands-norway-aurora-borealis-northern-lights-NORWAYLIGHTS1017-20d82f5331f342099cdb418e95809dad.jpg');
-    }
-    25% {
-      background-image: url('https://images.unsplash.com/photo-1523496922380-91d5afba98a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80 ');
-    }
-    50% {
-      background-image: url('https://i.ytimg.com/vi/q1CctfCfVu8/maxresdefault.jpg');
-    }
-    75% {
-      background-image: url('https://et-website.s3.amazonaws.com/uploads/2018/08/Enchanting-Travels-South-America-Tours-Aerial-View-of-Iguazu-Falls.jpg');
-    }
-    100% {
-      background-image: url('https://quiltripping.com/wp-content/uploads/2018/05/DSC_0922-1200x795.jpg');
-    }
-  }
+  
+}
+
+.nav.nav1{
+  background-image: none;
+  border-bottom: none;
+  justify-content: flex-end
+}
+
+
+
+
