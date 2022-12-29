@@ -16,8 +16,8 @@ function Search({search, setSearch}) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <Link to="/experience">
-         <button type="submit">Submit</button>
+        <Link to="/experience"> 
+         <button type="submit" className='search-btn'>🔍🏔</button>
             </Link>
         </div>
     );

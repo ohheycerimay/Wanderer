@@ -160,6 +160,22 @@ body {
   justify-content: flex-end
 }
 
+.search-bar{
+  background-color: rgb(243, 237, 237);
+  justify-content: center;
+  border: 2px solid #111;
+  font-size: 25px;
+  width: 300px;
+  height: 80px;
+
+}
+
+.search-btn{
+  border: 2px solid #111;
+  font-size: 25px;
+  width: 80px;
+  height: 80px;
+}
 
 
 
