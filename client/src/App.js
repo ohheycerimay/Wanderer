@@ -41,7 +41,7 @@ function App() {
   }
 
   useEffect(()=>{
-    fetch("/bookings")
+    fetch("/me")
     .then(response => response.json())
     .then(data =>console.log(data))
   },[])
