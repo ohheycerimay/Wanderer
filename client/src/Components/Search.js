@@ -1,6 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 function Search({search, setSearch}) {
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    search(setSearch);
+  }
     return (
         <div>
         <input
@@ -10,8 +16,9 @@ function Search({search, setSearch}) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <i>🔎</i>
-            
+        <Link to="/experience">
+         <button type="submit">Submit</button>
+            </Link>
         </div>
     );
 }

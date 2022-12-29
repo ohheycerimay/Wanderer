@@ -9,6 +9,7 @@ import UserLogin from './Components/UserLogin';
 import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
 import CreateExperience from './Components/CreateExperience';
+import NotFound from './Components/NotFound';
 
 function App() {
   const [experiences, setExperiences] = useState([])
@@ -46,13 +47,14 @@ function App() {
       <NavBar user={user} setUser={setUser}/>
 
       <Routes>
-        <Route exact path="/" element={<Home  />} />
+        <Route exact path="/" element={<Home search={search} setSearch={setSearch} />} />
         {/* <Home experiences = {experiences}/> */}
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
         <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience}/>}/>
         <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
         <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/>  
+        <Route path="*" element={<NotFound />} />
 
         {/* <Route path="*" element={<NotFound />} /> */}
 
