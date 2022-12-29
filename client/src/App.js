@@ -43,7 +43,7 @@ function App() {
   useEffect(()=>{
     fetch("/me")
     .then(response => response.json())
-    .then(data =>console.log(data))
+    .then(data => console.log(data))
   },[])
 
 

@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    before_action  only:[:index]
+    # before_action  only:[:index]
     
     def index
         render json: Booking.all
