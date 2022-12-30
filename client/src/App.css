@@ -122,8 +122,8 @@ body {
 }
 
 /* body */
-body {
-  min-height: 100vh;
+/* body { */
+  /* min-height: 100vh;
   padding: 40px;
 
   display: flex;
@@ -134,7 +134,7 @@ body {
   
   background: hsl(220, 10%, 12%);
   font-family: "Lato", "Segoe Ui", -apple-system, BlinkMacSystemFont, sans-serif;
-}
+} */
 
 /* .flip-card-container */
 .flip-card-container {
