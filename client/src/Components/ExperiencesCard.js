@@ -55,7 +55,10 @@ function ExperiencesCard({experience, onDelete}) {
             <img src={experience.image_url} alt={experience.name}/>
         </figure>
 
+    <Link to = {`/experience/experience/${experience.id}`}>
     <button>Book</button>
+    </Link>
+    
 
     <div className="design-container">
         <span className="design design--1"></span>
