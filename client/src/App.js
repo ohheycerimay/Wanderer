@@ -10,7 +10,7 @@ import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
 import CreateExperience from './Components/CreateExperience';
 import NotFound from './Components/NotFound';
-import Booking from './Components/Booking';
+import BookingContainer from './Components/BookingContainer';
 
 
 function App() {
@@ -61,9 +61,8 @@ function App() {
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
         <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience}/>}/>
         <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
-        <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/>  
-        <Route path="*" element={<NotFound />} />
-        <Route path="/bookings" element={<Booking/>}/>
+        <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/> 
+        <Route path="/bookings" element={<BookingContainer user={user}/>}/>
         <Route path="*" element={<NotFound />} />
 
         
