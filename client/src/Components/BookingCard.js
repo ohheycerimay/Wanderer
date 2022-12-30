@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BookingCard({booking, experience}) {
+function BookingCard({booking}) {
 
 
     return (

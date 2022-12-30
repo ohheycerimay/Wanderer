@@ -1,5 +1,4 @@
 import React from 'react';
-import ExperiencesContainer from './ExperiencesContainer';
 import Search from './Search';
 
 

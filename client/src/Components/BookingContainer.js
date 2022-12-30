@@ -5,7 +5,7 @@ import BookingCard from './BookingCard';
 
 function BookingContainer({user}) {
     // console.log(bookings)
-console.log(user.experiences)
+
 
 
     return (

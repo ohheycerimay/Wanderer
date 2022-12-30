@@ -2,7 +2,6 @@ import React, {useEffect, useState} from'react';
 import Home from './Components/Home';
 import './App.css';
 import NavBar from './Components/NavBar';
-import Search from './Components/Search';
 import {Route, Routes} from 'react-router-dom';
 import SignUp from './Components/SignUp';
 import UserLogin from './Components/UserLogin';
@@ -40,11 +39,11 @@ function App() {
     setExperiences(updateExperienceArray)
   }
 
-  useEffect(()=>{
-    fetch("/me")
-    .then(response => response.json())
-    .then(data => console.log(data))
-  },[])
+  // useEffect(()=>{
+  //   fetch("/me")
+  //   .then(response => response.json())
+  //   .then(data => console.log(data))
+  // },[])
 
 
 
@@ -56,7 +55,7 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Home search={search} setSearch={setSearch} />} />
-        {/* <Home experiences = {experiences}/> */}
+  
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
         <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience}/>}/>
