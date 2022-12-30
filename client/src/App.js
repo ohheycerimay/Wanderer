@@ -27,7 +27,7 @@ function App() {
       // console.log(user);
       const response2 = await fetch('/experiences');
       const experiences = await response2.json();
-      console.log(experiences);
+      setExperiences(experiences);
     }
     fetchData();
   }, []);
