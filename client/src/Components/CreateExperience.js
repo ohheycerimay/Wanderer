@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ExperiencesCard from './ExperiencesCard';
+// import ExperiencesCard from './ExperiencesCard';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -25,7 +25,7 @@ function CreateExperience({experiencesData, setExperiencesData}) {
             .then(data => {
                 setFormData(initialFormState)
                 setExperiencesData([data, ...experiencesData])
-                navigate("/experience")
+                navigate("/experiences")
             })
 
     }
