@@ -18,22 +18,22 @@ let navigate = useNavigate()
 
       console.log(user)
     return (
-      <div>
+      <div className = 'nav_div'>
         <div className="nav nav1">
           <NavLink className="button" to="/userlogin">Login</NavLink>
           {user ? <button className="button" onClick={handleLogoutClick}>Logout</button> : <> </>}
-   
+
           <NavLink className="button" to="/signup">Sign Up</NavLink>
         </div>
         <div className="nav nav2">
           {user ? (
-            <div>
+            <div className = 'profile_container'>
           <img className = 'profile_pic' src={user.profile_pic} alt={user.username} /> 
-          <h4> Hello, {user.username}</h4>
+          <h4 className='profile_greeting'> Hello, {user.username}</h4>
           </div>
 
-           ): (
-           <h4>Login or Signup</h4>)}
+          ): (
+          <h4>Login or Signup</h4>)}
             <NavLink className="button" to="/">Home</NavLink>
             <NavLink className="button" to="/experience">Experiences</NavLink>
             <NavLink className="button" to="/create-experience"> Create Experience</NavLink>
