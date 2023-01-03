@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :bookings, only: [:index, :show, :create, :update, :destroy]
+  resources :posts, only: [:index, :show, :create, :update, :destroy]
   resources :experiences, only: [:index, :show, :create, :update, :destroy]
   
   # Routing logic: fallback requests for React Router.

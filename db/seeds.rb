@@ -2,7 +2,7 @@ puts "Destroying database"
 
 User.destroy_all
 Experience.destroy_all
-Booking.destroy_all
+Post.destroy_all
 
 puts "Seeding users...👥"
 
@@ -71,11 +71,11 @@ puts "Experiences seeded!"
 
 puts "Seeding bookings..."
 
-b1= Booking.create(user_id: u1.id, experience_id: e3.id, datetime:"06/16/2023 8:30", people_count: 2 , total_price: 950)
-b2= Booking.create(user_id: u2.id, experience_id: e11.id, datetime:"06/18/2023 12:30", people_count: 2, total_price: 3000)
-b3= Booking.create(user_id: u3.id, experience_id: e1.id, datetime:"12/04/2023 11:45", people_count: 2, total_price: 1384)
-b4= Booking.create(user_id: u1.id, experience_id: e6.id, datetime:"07/04/2023 9:00", people_count: 4, total_price: 608)
-b5= Booking.create(user_id: u2.id, experience_id: e9.id, datetime:"10/31/2023 10:45", people_count: 4, total_price: 1476)
-b6= Booking.create(user_id: u3.id, experience_id: e17.id, datetime:"11/27/2023 12:00", people_count: 4, total_price: 620)
+b1= Post.create(user_id: u1.id, experience_id: e3.id, comment:"great experience")
+b2= Post.create(user_id: u2.id, experience_id: e11.id, comment:"would definitely recommend")
+b3= Post.create(user_id: u3.id, experience_id: e1.id, comment:"my family had a great time")
+b4= Post.create(user_id: u1.id, experience_id: e6.id, comment:"very peaceful city")
+b5= Post.create(user_id: u2.id, experience_id: e9.id, comment:"would not recommend")
+b6= Post.create(user_id: u3.id, experience_id: e17.id, comment:"pet friendly")
 
 puts "Bookings seeded!"

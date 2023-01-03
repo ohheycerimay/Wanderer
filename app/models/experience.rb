@@ -1,6 +1,6 @@
 class Experience < ApplicationRecord
-    has_many :bookings
-    has_many :users, through: :bookings
+    has_many :posts
+    has_many :users, through: :posts
 
     validates :name, presence: true
 end
