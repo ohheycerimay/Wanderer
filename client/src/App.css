@@ -24,25 +24,107 @@ body {
   }
 }
 
-.nav {
+/* .nav { */
   /* background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm28-marble-kung-088-job598.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=1f8bff18c4ea827cecbbb5c3f77e9f66"); */
   /* border: 2px solid rgb(250, 186, 117); */
-  display: flex;
+  /* display: flex;
   touch-action: manipulation;
   justify-content: center;
   
   
-}
-
+} */
+/* 
 .nav_div{
   margin-bottom: 50px;
-}
+} */
 
-.nav.nav1{
+/* .nav.nav1{
   background-image: none;
   border-bottom: none;
   justify-content: flex-end
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
+/* 
+body {
+  background: #272727;
+  font-family: "Montserrat", sans-serif;
+} */
+
+.navMenu {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #3f7941;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #3f7941;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(285px);
+  transform: translateX(285px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
 
 .search-bar{
   background-color: rgb(243, 237, 237);
@@ -103,6 +185,16 @@ body {
 
 .search-btn:hover {
   outline: 0;
+}
+.search_div{
+    display: flex;
+    background-color: #111;
+    position: absolute;
+    top: 18%;
+    left: 30%;
+    align-content: stretch;
+    flex-direction: row;
+    align-items: center;
 }
 .profile_container {
   display: flex;

@@ -9,14 +9,14 @@ import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
 import CreateExperience from './Components/CreateExperience';
 import NotFound from './Components/NotFound';
-import BookingContainer from './Components/BookingContainer';
+import LogoutPage from './Components/LogoutPage';
 
 
 function App() {
   const [experiences, setExperiences] = useState([])
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState('')
-  const [bookings, setBookings] = useState([])
+  
 
   useEffect(() => {
     async function fetchData() {
@@ -61,7 +61,7 @@ function App() {
         <Route path="/experience" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience}/>}/>
         <Route path="/experience/experience/:id" element= {<ExperienceShow />}/>  
         <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/> 
-        <Route path="/bookings" element={<BookingContainer user={user}/>}/>
+        <Route path="/logout" element={<LogoutPage user={user} setUser = {setUser}/>}/>
         <Route path="*" element={<NotFound />} />
 
         
