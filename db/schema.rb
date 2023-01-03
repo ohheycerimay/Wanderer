@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_12_22_212355) do
 
-  create_table "bookings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "experience_id"
-    t.string "datetime"
-    t.integer "people_count"
-    t.integer "total_price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "experiences", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -30,6 +20,14 @@ ActiveRecord::Schema.define(version: 2022_12_22_212355) do
     t.string "image_url"
     t.string "includes"
     t.integer "likes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "experience_id"
+    t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
