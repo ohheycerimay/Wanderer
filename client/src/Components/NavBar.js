@@ -20,14 +20,15 @@ function NavBar({user}) {
       ): (
       <h4>Login or Signup</h4>)}
           </div>
-      <div className='navMenu'>
+      <nav className='navMenu'>
         <NavLink className="button" to="/">Home</NavLink>
         <NavLink className="button" to="/experience">Experiences</NavLink>
-        <NavLink className="button" to="/create-experience"> Create Experience</NavLink>
+        {/* <NavLink className="button" to="/create-experience"> Create Experience</NavLink> */}
         <NavLink className="button" to="/signup">Sign Up</NavLink>
         <NavLink className="button" to="/userlogin">Login</NavLink>
         <NavLink className="button" to="/logout">Logout</NavLink>
-        </div>
+        <div className="dot"></div>
+        </nav>
     </>
     )
 }

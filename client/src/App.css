@@ -71,9 +71,9 @@ body {
   font-size: 1.2em;
   text-transform: uppercase;
   font-weight: 500;
-  display: inline-block;
+  display: block-right;
   width: 80px;
-  -webkit-transition: all 0.2s ease-in-out;
+  margin: 15px;
   transition: all 0.2s ease-in-out;
 }
 
