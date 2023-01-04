@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-// import ExperiencesCard from './ExperiencesCard';
-import { useNavigate } from 'react-router-dom';
 
 
 
-function CreateExperience({experiencesData, setExperiencesData}) {
-    let navigate = useNavigate();
+
+function CreateExperience({experienceData, setExperienceData}) {
+    console.log(experienceData);
+    
     let initialFormState = {
         name: "",
         location:"",
@@ -24,8 +24,7 @@ function CreateExperience({experiencesData, setExperiencesData}) {
         }).then(response => response.json())
             .then(data => {
                 setFormData(initialFormState)
-                setExperiencesData([data, ...experiencesData])
-                navigate("/experiences")
+                setExperienceData([data, ...experienceData])
             })
 
     }
@@ -38,8 +37,6 @@ function CreateExperience({experiencesData, setExperiencesData}) {
         })
     }
 
- 
-
     return (
         <div>
             <h3>Create An Experience</h3>
@@ -50,9 +47,9 @@ function CreateExperience({experiencesData, setExperiencesData}) {
                 <input className="input_field" value={formData.price} placeholder="price" name="price" type="number" onChange={handleChange} />
                 <input className="input_field" value={formData.image_url} placeholder="image-url" name="image_url" type="text" onChange={handleChange} />
                 <button className="button-85" id="create-experience-button">Create Experience</button>
- 
+
             </form>
-            {/* {experiencesData.map(experience => <ExperiencesCard key={experience.id} experience={experience} />)} */}
+            
             
         </div>
     );

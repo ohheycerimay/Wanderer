@@ -6,12 +6,12 @@ function Home({search, setSearch}) {
     
     return (
         <div>
-            <img className= 'logo' src={Wander} alt="Wander" />
-        <div className='search_div' div>
-            <h2>Start your journey!</h2>
+            <div className='search_div' div>
+            
             <Search search={search} setSearch={setSearch}  />
         
-        </div>   
+        </div>
+            <img className= 'logo' src={Wander} alt="Wander" />
         </div>
     );
 }

@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom';
 function NavBar({user}) {
 
   // const [loggedIn, setLoggedIn] = useState(true);
-  console.log(user)
+  // console.log(user)
   
     return (
       <>

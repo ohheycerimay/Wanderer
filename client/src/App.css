@@ -144,7 +144,7 @@ h4 {
 
 
 /* SEARCH BAR */
-.wrap {
+/* .wrap {
   margin: 50px 100px;
   display: inline-block;
   position: relative;
@@ -206,8 +206,43 @@ h4 {
 
 .search-btn:hover {
   opacity: 0.8;
-}
+} */
 
+/* .search_div {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+} */
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 35%;
+}
+.search-bar{
+  outline: none;
+    opacity: .5;
+    position: absolute;
+    border-width: 0;
+    border-style: hidden;
+    border-radius: 8px;
+    background-color: #f6f4e6;
+    box-shadow: 3px 3px 15px rgba(22, 21, 21, 0.25);
+    width: 40%;
+    height: 75px;
+    margin-right: 10px;
+    padding: 0 0 0 15px;
+    color: black;  
+    transition: all .25s;
+    text-indent: 17.5px;
+}
+.search-bar:focus {
+  opacity: 1;
+}
+.search-btn {
+  height: 75px;
+}
 
 
 

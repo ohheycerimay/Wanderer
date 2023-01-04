@@ -7,7 +7,6 @@ import SignUp from './Components/SignUp';
 import UserLogin from './Components/UserLogin';
 import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
-import CreateExperience from './Components/CreateExperience';
 import NotFound from './Components/NotFound';
 import LogoutPage from './Components/LogoutPage';
 
@@ -39,15 +38,6 @@ function App() {
     setExperiences(updateExperienceArray)
   }
 
-  // useEffect(()=>{
-  //   fetch("/me")
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  // },[])
-
-
-
-
 
   return (
     <div>
@@ -58,9 +48,9 @@ function App() {
   
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
-        <Route path="/experiences" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience}/>}/>
+        <Route path="/experiences" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience} setExperiences={setExperiences}/>}/>
         <Route path="/experiences/:id" element= {<ExperienceShow />}/>  
-        <Route path="/create-experience" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/> 
+        {/* <Route path="/experiences" element= {<CreateExperience experiencesData={experiences} setExperiencesData={setExperiences} />}/>  */}
         <Route path="/logout" element={<LogoutPage user={user} setUser = {setUser}/>}/>
         <Route path="*" element={<NotFound />} />
 
