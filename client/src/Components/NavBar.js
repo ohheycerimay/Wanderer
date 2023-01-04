@@ -18,7 +18,7 @@ function NavBar({user}) {
       </div>
     
       ): (
-      <h4>Login or Signup</h4>)}
+      <div></div>)}
           </div>
       <nav className='navMenu'>
         <NavLink className="button" to="/">Home</NavLink>
@@ -27,7 +27,7 @@ function NavBar({user}) {
         <NavLink className="button" to="/signup">Sign Up</NavLink>
         <NavLink className="button" to="/userlogin">Login</NavLink>
         <NavLink className="button" to="/logout">Logout</NavLink>
-        <div className="dot"></div>
+        
         </nav>
     </>
     )

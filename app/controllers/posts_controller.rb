@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    # before_action  only:[:index]
+    # skip_before_action  only:[:index]
     
     def index
         render json: Post.all
