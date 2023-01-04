@@ -3,7 +3,7 @@ import{Link} from "react-router-dom";
 
 const headers = {
     Accepts: "application/json",
-          "Content-Type" : "application/json"}
+        "Content-Type" : "application/json"}
 
 function ExperiencesCard({experience, onDelete}) {
 
@@ -11,22 +11,22 @@ function ExperiencesCard({experience, onDelete}) {
 
     function updateLikes() {
         fetch(`experiences/${experience.id}`, {
-          method: "PATCH",
-          headers,
-          body: JSON.stringify({ likes: ++experience.likes }),
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ likes: ++experience.likes }),
         }).then((r) =>r.json())
         .then(((data)=>{
             setExperienceData({...data})
         }))
     }
 
-    function handleDelete(id){
-        onDelete(id)
-        fetch(`experiences/${id}`,{
-            method: 'DELETE',
-            headers,
-        })
-    }
+    // function handleDelete(id){
+    //     onDelete(id)
+    //     fetch(`experiences/${id}`,{
+    //         method: 'DELETE',
+    //         headers,
+    //     })
+    // }
 
     return ( 
         <>
@@ -56,8 +56,11 @@ function ExperiencesCard({experience, onDelete}) {
         </figure>
 
     <Link to = {`/experience/experience/${experience.id}`}>
-    <button>Book</button>
+    <button>More Info</button>
     </Link>
+    <button onClick={()=>updateLikes(experienceData)}>Like</button>
+    {/* <button onClick={()=>handleDelete(experienceData.id)}>Delete</button> */}
+    
     
 
     <div className="design-container">

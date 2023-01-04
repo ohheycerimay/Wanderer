@@ -44,11 +44,11 @@ class PostsController < ApplicationController
     end 
 
     private
-   
+
 
     def Post_params
         params.permit(:experience_id, :user_id, :comment)
     end
-   
+
 
 end
