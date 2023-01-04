@@ -55,7 +55,7 @@ function ExperiencesCard({experience, onDelete}) {
             <img src={experience.image_url} alt={experience.name}/>
         </figure>
 
-    <Link to = {`/experience/experience/${experience.id}`}>
+    <Link to = {`/experiences/${experience.id}`}>
     <button>More Info</button>
     </Link>
     <button onClick={()=>updateLikes(experienceData)}>Like</button>

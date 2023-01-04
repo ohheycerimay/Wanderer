@@ -25,7 +25,7 @@ function CreateExperience({experiencesData, setExperiencesData}) {
             .then(data => {
                 setFormData(initialFormState)
                 setExperiencesData([data, ...experiencesData])
-                navigate("/experience")
+                navigate("/experiences")
             })
 
     }
