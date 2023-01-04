@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
     def show
         experience = Experience.find_by_id(params[:id])
             if experience
-                render json: experience
+                render json: experience, serializer: CommentSectionSerializer
             else
                 render json: { error: "Experience not found" }, status: :not_found
             end

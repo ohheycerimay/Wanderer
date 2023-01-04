@@ -1,10 +1,12 @@
 
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
+// import CommentContainer from './CommentContainer';
+
 function ExperienceShow() {
     const {id} = useParams();
 
-    const [experience, setExperience] = useState([]);
+    const [experience, setExperience] = useState();
     
     useEffect(() => {
         fetch(`/experiences/${id}`)
@@ -13,16 +15,21 @@ function ExperienceShow() {
             setExperience({...data})
         })
     },[id])
+
+    console.log(experience)
     return (
 
         <div>
-            <div>
+            {experience && <div>
             <img className='tile_image' src={experience.image_url} alt={experience.name} />
                 <h3>{experience.name}</h3>
                 <h4>{experience.location}</h4>
                 <h5>${experience.price}</h5>
                 <h2>{experience.likes} Likes</h2>
                 <p>{experience.description}</p>
+            </div>}
+            <div>
+            {experience && experience.posts.map(post => <p className="comments-section">{post.comment}</p>)}
             </div>
         </div>
     );
