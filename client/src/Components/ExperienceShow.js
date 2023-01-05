@@ -1,6 +1,7 @@
 
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
+import CommentForm from './CommentForm';
 // import CommentContainer from './CommentContainer';
 
 function ExperienceShow() {
@@ -16,7 +17,6 @@ function ExperienceShow() {
         })
     },[id])
 
-    console.log(experience)
     return (
 
         <div>
@@ -31,6 +31,7 @@ function ExperienceShow() {
             <div>
             {experience && experience.posts.map(post => <p className="comments-section">{post.comment}</p>)}
             </div>
+            <CommentForm experience={experience} setExperience={setExperience}/>
         </div>
     );
 }
