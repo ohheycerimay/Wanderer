@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 // import ExperiencesCard from './ExperiencesCard';
-
+import {useParams} from "react-router-dom";
 
 
 
@@ -12,9 +12,10 @@ function CommentForm() {
     }
 
     const [formData, setFormData] = useState(initialFormState);
+    const {id} = useParams();
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("/posts", {
+        fetch(`/experiences/${id}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
@@ -22,7 +23,7 @@ function CommentForm() {
             .then(data => {
                 setFormData(initialFormState)
                 setDestination({...destination, posts:[...destination.posts, data]})
-         
+        
             })
 
     }
@@ -40,9 +41,9 @@ console.log(formData)
     return (
         <div>
             <form id="form" onSubmit={handleSubmit}>
-                <input className="input_field" value={formData.comment} placeholder="name" name="comment" type="text" onChange={handleChange} />
+                <input className="input_field" value={formData.comment} placeholder="comment" name="comment" type="text" onChange={handleChange} />
                 <button className="button-85" id="create-experience-button">add comment</button>
- 
+
             </form>
 
             
