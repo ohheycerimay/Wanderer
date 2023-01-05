@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 
 
-
-
-function CreateExperience({experienceData, setExperienceData}) {
+function CreateExperience({experiences, setExperiences}) {
+    // console.log(prop)
 
     const [showForm, setShowForm] = useState(false)
-    console.log(experienceData);
+    // console.log(experienceData);
     
     let initialFormState = {
         name: "",
@@ -26,7 +25,7 @@ function CreateExperience({experienceData, setExperienceData}) {
         }).then(response => response.json())
             .then(data => {
                 setFormData(initialFormState)
-                setExperienceData([data, ...experienceData])
+                setExperiences([data, ...experiences])
                 setShowForm(!showForm)
             })
 

@@ -9,7 +9,7 @@ import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
 import NotFound from './Components/NotFound';
 import LogoutPage from './Components/LogoutPage';
-import CreateExperience from './Components/CreateExperience';
+// import CreateExperience from './Components/CreateExperience';
 
 
 function App() {
@@ -23,13 +23,15 @@ function App() {
       const response1 = await fetch('/me');
       const user = await response1.json();
       setUser(user);
-      console.log(user);
+
       const response2 = await fetch('/experiences');
       const experiences = await response2.json();
       setExperiences(experiences);
     }
     fetchData();
   }, []);
+
+
 
   const searchFilter = experiences.filter((eachExperience) => eachExperience.location.toLowerCase().includes(search.toLowerCase()) ||
   eachExperience.name.toLowerCase().includes(search.toLowerCase())); 

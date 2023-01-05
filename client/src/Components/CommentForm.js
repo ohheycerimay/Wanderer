@@ -3,10 +3,10 @@ import React, {useState} from 'react';
 import {useParams} from "react-router-dom";
 
 
-function CommentForm({user, onDeleteComment}) {
+function CommentForm({user, setExperience, experience}) {
 
 
-    const [destination, setDestination] = useState({posts:[]})  
+  
     let initialFormState = {
         comment: "",
     }
@@ -29,7 +29,7 @@ function CommentForm({user, onDeleteComment}) {
         }).then(response => response.json())
             .then(data => {
                 setFormData(initialFormState)
-                setDestination({...destination, posts:[...destination.posts, data]})
+                setExperience({...experience, posts:[...experience.posts, data]})
         
             })
 

@@ -3,7 +3,7 @@ import ExperiencesCard from './ExperiencesCard';
 // import Search from './Search';
 import CreateExperience from './CreateExperience'
 
-function ExperiencesContainer({experiences,setExperiences, search, setSearch, onDelete}) {
+function ExperiencesContainer({experiences,setExperiences, onDelete}) {
     console.log(experiences);
     return (
         <div>

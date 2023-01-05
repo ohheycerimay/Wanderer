@@ -1,12 +1,12 @@
 // import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function NavBar({user}) {
 
   // const [loggedIn, setLoggedIn] = useState(false);
-  console.log(user)
+ 
   
     return (
       <>

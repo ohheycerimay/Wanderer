@@ -28,7 +28,7 @@ function ExperienceShow({user}) {
     
     function handleDeleteComment(id) {
         const updateCommentArray = experience.posts.filter(comment => comment.id !== id)
-        setExperience(updateCommentArray)
+        setExperience({...experience, posts: updateCommentArray})
       }
     
     function handleDelete(id){
@@ -39,7 +39,7 @@ function ExperienceShow({user}) {
         })
     }
     
-    
+    console.log(experience)
 
     return (
 
