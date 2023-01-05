@@ -22,7 +22,7 @@ function App() {
       const response1 = await fetch('/me');
       const user = await response1.json();
       setUser(user);
-      // console.log(user);
+      console.log(user);
       const response2 = await fetch('/experiences');
       const experiences = await response2.json();
       setExperiences(experiences);
