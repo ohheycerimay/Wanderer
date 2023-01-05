@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 import CommentForm from './CommentForm';
 // import CommentContainer from './CommentContainer';
 
-function ExperienceShow() {
+function ExperienceShow({user}) {
+
+
     const {id} = useParams();
 
     const [experience, setExperience] = useState();
@@ -31,7 +33,7 @@ function ExperienceShow() {
             <div>
             {experience && experience.posts.map(post => <p className="comments-section">{post.comment}</p>)}
             </div>
-            <CommentForm experience={experience} setExperience={setExperience}/>
+            <CommentForm user={user} experience={experience} setExperience={setExperience}/>
         </div>
     );
 }

@@ -4,7 +4,8 @@ import {useParams} from "react-router-dom";
 
 
 
-function CommentForm() {
+function CommentForm({user}) {
+
 
     const [destination, setDestination] = useState({posts:[]})  
     let initialFormState = {
@@ -15,10 +16,17 @@ function CommentForm() {
     const {id} = useParams();
     const handleSubmit = (e) => {
         e.preventDefault()
+        const newComment = {
+            user_id: user.id,
+            experience_id: id,
+            comment: formData.comment
+        
+        }
+        console.log(formData)
         fetch(`/experiences/${id}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(newComment)
         }).then(response => response.json())
             .then(data => {
                 setFormData(initialFormState)
@@ -36,7 +44,7 @@ function CommentForm() {
         })
     }
 
-console.log(formData)
+// console.log(formData)
 
     return (
         <div>
