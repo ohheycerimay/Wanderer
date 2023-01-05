@@ -41,7 +41,7 @@ console.log(formData)
         <div>
             <form id="form" onSubmit={handleSubmit}>
                 <input className="input_field" value={formData.comment} placeholder="name" name="comment" type="text" onChange={handleChange} />
-                <button className="button-85" id="create-experience-button">add comment</button>
+                <button className="create-button" id="create-experience-button">add comment</button>
  
             </form>
 

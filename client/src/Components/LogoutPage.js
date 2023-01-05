@@ -14,9 +14,9 @@ function LogoutPage({user, setUser}) {
 
     console.log(user)
     return (
-        <div>
-            <h1>Are you sure you want to logout?</h1>
-            <button onClick={handleLogoutClick}>Logout</button>
+        <div className="logout">
+            <h1>Are you sure you want to log out?</h1>
+            <button className="logout-button" onClick={handleLogoutClick}>Log Out</button>
         </div>
     );
 }
