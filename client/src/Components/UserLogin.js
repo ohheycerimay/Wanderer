@@ -35,10 +35,11 @@ function UserLogin({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form  className="login-form" onSubmit={handleSubmit}>
     
         <label htmlFor="username">Username</label>
         <input
+          class="username"
           type="text"
           id="username"
           autoComplete="off"
@@ -48,6 +49,7 @@ function UserLogin({ onLogin }) {
 
         <label htmlFor="password">Password</label>
         <input
+          class="password"
           type="password"
           id="password"
           autoComplete="current-password"

@@ -39,14 +39,14 @@ function CreateExperience({experienceData, setExperienceData}) {
 
     return (
         <div>
-            <h3>Create An Experience</h3>
+            
             <form id="form" onSubmit={handleSubmit}>
                 <input className="input_field" value={formData.name} placeholder="name" name="name" type="text" onChange={handleChange} />
                 <input className="input_field" value={formData.location} placeholder="location" name="location" type="text" onChange={handleChange} />
                 <input className="input_field" value={formData.description} placeholder="description" name="description" type="text" onChange={handleChange} />
                 <input className="input_field" value={formData.price} placeholder="price" name="price" type="number" onChange={handleChange} />
                 <input className="input_field" value={formData.image_url} placeholder="image-url" name="image_url" type="text" onChange={handleChange} />
-                <button className="button-85" id="create-experience-button">Create Experience</button>
+                <button className="create-button" id="create-experience-button">Create Experience</button>
 
             </form>
             

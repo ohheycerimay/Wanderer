@@ -45,7 +45,7 @@ let navigate = useNavigate();
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form class="signup-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -58,6 +58,7 @@ let navigate = useNavigate();
       
         <label htmlFor="password">Password</label>
         <input
+          class="password"
           type="password"
           id="password"
           value={password}
@@ -66,8 +67,9 @@ let navigate = useNavigate();
         />
   
 
-        <label htmlFor="password">Password Confirmation</label>
+        <label htmlFor="password_confirmation">Password Confirmation</label>
         <input
+          class="password-confirmation"
           type="password"
           id="password_confirmation"
           value={passwordConfirmation}
@@ -77,6 +79,7 @@ let navigate = useNavigate();
     
         <label htmlFor="profile_pic">Profile Image</label>
         <input
+          class="profile-pic"
           type="text"
           id="profile_pic"
           value={profile_pic}
