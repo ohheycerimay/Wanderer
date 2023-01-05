@@ -35,7 +35,7 @@ function CommentForm() {
         })
     }
 
- 
+console.log(formData)
 
     return (
         <div>
