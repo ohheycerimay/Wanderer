@@ -69,13 +69,15 @@ During this tour you will have access to the exhibits and get the full pictures 
 ", price:96, image_url: "https://www.andbeyond.com/wp-content/uploads/sites/5/Sterkfontein-Caves-Maropeng.jpg ", includes:"", likes:129)
 puts "Experiences seeded!"
 
-puts "Seeding bookings..."
+puts "Seeding posts..."
 
-b1= Post.create(user_id: u1.id, experience_id: e3.id, comment:"great experience")
-b2= Post.create(user_id: u2.id, experience_id: e11.id, comment:"would definitely recommend")
-b3= Post.create(user_id: u3.id, experience_id: e1.id, comment:"my family had a great time")
-b4= Post.create(user_id: u1.id, experience_id: e6.id, comment:"very peaceful city")
-b5= Post.create(user_id: u2.id, experience_id: e9.id, comment:"would not recommend")
-b6= Post.create(user_id: u3.id, experience_id: e17.id, comment:"pet friendly")
+40.times do
+    Post.create(
+        comment: Faker::Restaurant.review, 
+        user_id: User.all.sample.id,
+        experience_id: Experience.all.sample.id,
+        likes: rand(1...500)
+    )
+end
 
-puts "Bookings seeded!"
+puts "Bookings posts!"

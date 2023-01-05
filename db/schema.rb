@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_212355) do
     t.integer "user_id"
     t.integer "experience_id"
     t.string "comment"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
