@@ -8,7 +8,7 @@ function Search({search, setSearch}) {
   //   search(setSearch);
   // }
     return (
-        <div className='search'>
+        <div className='search-bar'>
         <input
         className="search-bar"
           type="text"
@@ -17,7 +17,7 @@ function Search({search, setSearch}) {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Link to="/experiences"> 
-        <button type="submit" className='search-btn'><img src = {magnify} alt = 'search'/></button>
+        <button type="submit" className='search-icon'><img src = {magnify} alt = 'search'/></button>
             </Link>
         </div>
     );

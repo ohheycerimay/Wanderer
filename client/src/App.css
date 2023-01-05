@@ -214,34 +214,26 @@ h4 {
 
   align-items: center;
 } */
-.search {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 35%;
+.search-bar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
-.search-bar{
-  outline: none;
-    opacity: .5;
-    position: absolute;
-    border-width: 0;
-    border-style: hidden;
-    border-radius: 8px;
-    background-color: #f6f4e6;
-    box-shadow: 3px 3px 15px rgba(22, 21, 21, 0.25);
-    width: 40%;
-    height: 75px;
-    margin-right: 10px;
-    padding: 0 0 0 15px;
-    color: black;  
-    transition: all .25s;
-    text-indent: 17.5px;
+
+/* Style the search input field */
+.search-bar input[type="text"] {
+  width: 50%; /* Make the input field take up the full width of the search bar */
+  border: none; /* Remove the border */
+  font-size: 16px; /* Increase the font size */
+  outline: none; /* Remove the outline */
 }
-.search-bar:focus {
-  opacity: 1;
-}
-.search-btn {
-  height: 75px;
+
+/* Style the search icon */
+.search-bar .search-icon {
+  position: absolute; /* Position the icon at the right edge of the search bar */
+  top: 50%; /* Center the icon vertically */
+  right: 10px; /* Add some spacing between the icon and the input field */
+  transform: translateY(-50%); /* Vertically center the icon */
+  color: #ccc; /* Set the icon color to light grey */
 }
 
 
@@ -619,5 +611,137 @@ button:focus+.design-container {
   color: hsla(0, 0%, 100%, .6);
   font-size: 16px;
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.signup-form .password-confirmation {
+  margin-top: 16px;
+}
+
+
+.signup-form .profile-pic {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin: 8px 0;
+}
+
+.signup-form button {
+  width: 100%;
+  background-color: #996515;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: #45a049;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.login-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.login-form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  background-color: #996515;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #45a049;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* label {
+  font-weight: bold;
+  margin-bottom: 10px;
+} */
+
+input[type="text"], textarea {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 8px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.create-button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  background-color: #996515;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: #45a049;
+}
+
+
+label {
+  font-family: "Montserrat", sans-serif;
 }
 
