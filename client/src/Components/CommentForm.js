@@ -49,8 +49,11 @@ function CommentForm({user}) {
     return (
         <div>
             <form id="form" onSubmit={handleSubmit}>
+
+
                 <input className="input_field" value={formData.comment} placeholder="comment" name="comment" type="text" onChange={handleChange} />
                 <button className="button-85" id="create-experience-button">add comment</button>
+
 
             </form>
 

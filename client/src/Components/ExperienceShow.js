@@ -24,11 +24,23 @@ function ExperienceShow({user}) {
         <div>
             {experience && <div>
             <img className='tile_image' src={experience.image_url} alt={experience.name} />
-                <h3>{experience.name}</h3>
-                <h4>{experience.location}</h4>
-                <h5>${experience.price}</h5>
-                <h2>{experience.likes} Likes</h2>
+            <div>
+                <div>
+                <h1>{experience.name}</h1>
+                </div>
+                <div>
+                <div>
                 <p>{experience.description}</p>
+                <p>{experience.likes} Likes</p>
+                </div>
+                <div>
+                <p>{experience.location}</p>
+                </div>
+                <div>
+                <p>${experience.price}</p>
+                </div>
+                </div>
+                </div>
             </div>}
             <div>
             {experience && experience.posts.map(post => <p className="comments-section">{post.comment}</p>)}
