@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    skip_before_action 
+    skip_before_action :authorize, only: [:destroy]
     
     def index
         render json: Post.all
@@ -35,6 +35,7 @@ class PostsController < ApplicationController
     end
 
     def destroy
+       
         post = Post.find_by_id(params[:id])
         if post
             post.destroy

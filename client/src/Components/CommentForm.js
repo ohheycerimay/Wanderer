@@ -3,8 +3,7 @@ import React, {useState} from 'react';
 import {useParams} from "react-router-dom";
 
 
-
-function CommentForm({user}) {
+function CommentForm({user, onDeleteComment}) {
 
 
     const [destination, setDestination] = useState({posts:[]})  
@@ -44,10 +43,13 @@ function CommentForm({user}) {
         })
     }
 
+
+
 // console.log(formData)
 
     return (
         <div>
+          
             <form id="form" onSubmit={handleSubmit}>
 
 

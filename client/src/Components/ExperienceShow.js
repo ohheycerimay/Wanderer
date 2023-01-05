@@ -4,6 +4,11 @@ import { useParams } from 'react-router-dom';
 import CommentForm from './CommentForm';
 // import CommentContainer from './CommentContainer';
 
+
+const headers = {
+    Accepts: "application/json",
+        "Content-Type" : "application/json"}
+
 function ExperienceShow({user}) {
 
 
@@ -18,6 +23,23 @@ function ExperienceShow({user}) {
             setExperience({...data})
         })
     },[id])
+
+    
+    
+    function handleDeleteComment(id) {
+        const updateCommentArray = experience.posts.filter(comment => comment.id !== id)
+        setExperience(updateCommentArray)
+      }
+    
+    function handleDelete(id){
+        handleDeleteComment(id)
+        fetch(`/posts/${id}`,{
+            method: 'DELETE',
+            headers,
+        })
+    }
+    
+    
 
     return (
 
@@ -43,7 +65,10 @@ function ExperienceShow({user}) {
                 </div>
             </div>}
             <div>
-            {experience && experience.posts.map(post => <p className="comments-section">{post.comment}</p>)}
+                {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p>
+                <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>
+                </div>)}
+           
             </div>
             <CommentForm user={user} experience={experience} setExperience={setExperience}/>
         </div>
