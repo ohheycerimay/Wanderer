@@ -61,9 +61,9 @@ function UserLogin({ onLogin }) {
           {isLoading ? "Loading..." : "Login"}
         </button>
 
-        {/* {errors.map((err) => (
+        {errors.map((err) => (
           <error key={err}>{err}</error>
-        ))} */}
+        ))}
 
     </form>
   );

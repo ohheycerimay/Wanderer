@@ -9,6 +9,7 @@ import ExperienceShow from './Components/ExperienceShow';
 import ExperiencesContainer from './Components/ExperiencesContainer';
 import NotFound from './Components/NotFound';
 import LogoutPage from './Components/LogoutPage';
+import CreateExperience from './Components/CreateExperience';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       const response1 = await fetch('/me');
       const user = await response1.json();
       setUser(user);
-      // console.log(user);
+      console.log(user);
       const response2 = await fetch('/experiences');
       const experiences = await response2.json();
       setExperiences(experiences);
@@ -38,7 +39,6 @@ function App() {
     setExperiences(updateExperienceArray)
   }
 
-
   return (
     <div>
       <NavBar user={user} setUser={setUser}/>
@@ -50,6 +50,7 @@ function App() {
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
         <Route path="/experiences" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience} setExperiences={setExperiences}/>}/>
         <Route path="/experiences/:id" element= {<ExperienceShow/>}/>  
+        <Route path="/create-experience" element= {<CreateExperience/>}/>  
         <Route path="/logout" element={<LogoutPage user={user} setUser = {setUser}/>}/>
         <Route path="*" element={<NotFound />} />
 

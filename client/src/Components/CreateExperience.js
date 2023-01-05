@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 
 
 function CreateExperience({experienceData, setExperienceData}) {
+
+    const [showForm, setShowForm] = useState(false)
     console.log(experienceData);
     
     let initialFormState = {
@@ -25,6 +27,7 @@ function CreateExperience({experienceData, setExperienceData}) {
             .then(data => {
                 setFormData(initialFormState)
                 setExperienceData([data, ...experienceData])
+                setShowForm(!showForm)
             })
 
     }
@@ -39,7 +42,11 @@ function CreateExperience({experienceData, setExperienceData}) {
 
     return (
         <div>
-            
+            <div>
+            <button className="create-button" id="create-experience-button" onClick={() => setShowForm(!showForm)}>Create Experience</button>
+            </div>
+        {showForm ? 
+        (<div>
             <form id="form" onSubmit={handleSubmit}>
                 <input className="input_field" value={formData.name} placeholder="name" name="name" type="text" onChange={handleChange} />
                 <input className="input_field" value={formData.location} placeholder="location" name="location" type="text" onChange={handleChange} />
@@ -49,6 +56,7 @@ function CreateExperience({experienceData, setExperienceData}) {
                 <button className="create-button" id="create-experience-button">Create Experience</button>
 
             </form>
+        </div>) : <></>}
             
             
         </div>
