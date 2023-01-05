@@ -49,8 +49,7 @@ function App() {
         <Route exact path="/signup" element={<SignUp onSignUp={setUser}/>}/>
         <Route exact path="/userlogin" element={<UserLogin onLogin={setUser}/>}/>
         <Route path="/experiences" element={<ExperiencesContainer experiences={searchFilter} search={search} setSearch={setSearch} onDelete={handleDeleteExperience} setExperiences={setExperiences}/>}/>
-        <Route path="/experiences/:id" element= {<ExperienceShow user={user}/>}/>  
-        <Route path="/create-experience" element= {<CreateExperience/>}/>  
+        <Route path="/experiences/:id" element= {<ExperienceShow user={user}/>}/> 
         <Route path="/logout" element={<LogoutPage user={user} setUser = {setUser}/>}/>
         <Route path="*" element={<NotFound />} />
 

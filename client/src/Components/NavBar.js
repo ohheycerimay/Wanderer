@@ -25,7 +25,6 @@ function NavBar({user}) {
           <NavLink className="button" to="/">Home</NavLink>
           <NavLink className="button" to="/experiences">Experiences</NavLink>
           <>
-        <NavLink className="button" to="/create-experience">Create an Experiences</NavLink>
         <NavLink className="button" to="/logout">Logout</NavLink> 
         </>
           <>

@@ -43,7 +43,7 @@ function CreateExperience({experienceData, setExperienceData}) {
     return (
         <div>
             <div>
-            <button className="create-button" id="create-experience-button" onClick={() => setShowForm(!showForm)}>Create Experience</button>
+            <button className="create-button" id="create-experience-button" onClick={() => setShowForm(!showForm)}>Login or Sign up to Create an Experience</button>
             </div>
         {showForm ? 
         (<div>
