@@ -38,7 +38,6 @@ function App() {
     setExperiences(updateExperienceArray)
   }
 
-
   return (
     <div>
       <NavBar user={user} setUser={setUser}/>
