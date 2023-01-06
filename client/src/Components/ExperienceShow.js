@@ -38,8 +38,23 @@ function ExperienceShow({user}) {
             headers,
         })
     }
+
     
-    console.log(experience)
+
+    function updateCommentLikes() {
+        fetch(`/posts/${experience.posts.id}`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ likes: ++experience.posts.likes }),
+        }).then((r) =>r.json())
+        .then(((data)=>{
+            setExperience(e => ({...}))
+        }))
+    }
+
+
+    
+
 
     return (
 
@@ -65,8 +80,8 @@ function ExperienceShow({user}) {
                 </div>
             </div>}
             <div>
-                {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p>
-                <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>
+                {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p><p>{post.likes}</p>
+                <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>   <button onClick={()=>updateCommentLikes(experience)}>Like</button>
                 </div>)}
            
             </div>

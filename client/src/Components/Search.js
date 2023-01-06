@@ -3,10 +3,14 @@ import {Link} from "react-router-dom"
 import magnify from './magnify.png';
 function Search({search, setSearch}) {
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   search(setSearch);
-  // }
+  function handleSubmit() {
+    setSearch('');
+  }
+
+  // clear search bar after submit
+  
+
+
     return (
         <div className='search-bar'>
         <input
@@ -17,7 +21,7 @@ function Search({search, setSearch}) {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Link to="/experiences"> 
-        <button type="submit" className='search-icon'><img src = {magnify} alt = 'search'/></button>
+        <button onSubmit={handleSubmit} type="submit" className='search-icon'><img src = {magnify} alt = 'search'/></button>
             </Link>
         </div>
     );

@@ -21,7 +21,7 @@ function CommentForm({user, setExperience, experience}) {
             comment: formData.comment
         
         }
-        console.log(formData)
+
         fetch(`/experiences/${id}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -44,8 +44,7 @@ function CommentForm({user, setExperience, experience}) {
     }
 
 
-
-// console.log(formData)
+    
 
     return (
         <div>
