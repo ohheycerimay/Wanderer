@@ -40,16 +40,16 @@ function ExperienceShow({user}) {
     }
 
     
-
-    function updateCommentLikes() {
-        fetch(`/posts/${experience.posts.id}`, {
+    function updateCommentLikes(post) {
+        fetch(`/posts/${post.id}`, {
         method: "PATCH",
         headers,
-        body: JSON.stringify({ likes: ++experience.posts.likes }),
-        }).then((r) =>r.json())
-        .then(((data)=>{
-            setExperience(e => ({...}))
-        }))
+        body: JSON.stringify({ likes: ++post.likes }),
+        }).then((r) => r.json())
+        .then((freshPost) => {
+            const newPostArray = experience.posts.map((p) => p.id !== freshPost.id ? p : freshPost);
+            setExperience({ ...experience, posts: newPostArray });
+        });
     }
 
 
@@ -81,9 +81,8 @@ function ExperienceShow({user}) {
             </div>}
             <div>
                 {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p><p>{post.likes}</p>
-                <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>   <button onClick={()=>updateCommentLikes(experience)}>Like</button>
+                <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>   <button onClick={()=>updateCommentLikes(post)}>Like</button>
                 </div>)}
-           
             </div>
             <CommentForm user={user} experience={experience} setExperience={setExperience}/>
         </div>
