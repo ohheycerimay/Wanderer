@@ -77,7 +77,7 @@ let navigate = useNavigate();
           autoComplete="current-password"
         />
     
-        <label htmlFor="profile_pic">Profile Image</label>
+        <label htmlFor="profile_pic">Profile Picture URL</label>
         <input
           class="profile-pic"
           type="text"

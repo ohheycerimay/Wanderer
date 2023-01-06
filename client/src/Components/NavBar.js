@@ -25,11 +25,11 @@ function NavBar({user}) {
           <NavLink className="navlink" to="/">Home</NavLink>
           <NavLink className="navlink" to="/experiences">Experiences</NavLink>
           <>
-        <NavLink className="navlink" to="/logout">Logout</NavLink> 
         </>
           <>
           <NavLink className="navlink" to="/userlogin">Login</NavLink>
           <NavLink className="navlink" to="/signup">Sign Up</NavLink>
+          <NavLink className="navlink" to="/logout">Logout</NavLink> 
           </>
 
         </nav>

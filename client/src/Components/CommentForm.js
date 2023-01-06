@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 function CommentForm({user, setExperience, experience}) {
 
 
-  
+
     let initialFormState = {
         comment: "",
     }
@@ -48,12 +48,12 @@ function CommentForm({user, setExperience, experience}) {
 
     return (
         <div>
-          
+        
             <form id="form" onSubmit={handleSubmit}>
 
-
-                <input className="input_field" value={formData.comment} placeholder="comment" name="comment" type="text" onChange={handleChange} />
-                <button className="button-85" id="create-experience-button">add comment</button>
+                <label>Tell us about your experience</label>
+                <input className="input_field" value={formData.comment} placeholder="" name="comment" type="text" onChange={handleChange} />
+                <button className="button" id="create-experience-button">add comment</button>
 
 
             </form>

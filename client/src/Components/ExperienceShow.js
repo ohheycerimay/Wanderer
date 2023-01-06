@@ -58,29 +58,30 @@ function ExperienceShow({user}) {
 
     return (
 
-        <div>
+        <div className='show-page'>
             {experience && <div>
-            <img className='tile_image' src={experience.image_url} alt={experience.name} />
-            <div>
-                <div>
+            <div className='image-container'>
+                <img className='show-image' src={experience.image_url} alt='{experience.name}' />
+            
+            <div className='content-container'>
+                
                 <h1>{experience.name}</h1>
+                
+                <h3>{experience.location}</h3>
+                <br></br>
+                <div stats-container>
+                    <h4>${experience.price}</h4>
+                    <br></br>
+                    <h4>{experience.likes} likes</h4>
                 </div>
-                <div>
-                <div>
-                <p>{experience.description}</p>
-                <p>{experience.likes} Likes</p>
-                </div>
-                <div>
-                <p>{experience.location}</p>
-                </div>
-                <div>
-                <p>${experience.price}</p>
-                </div>
-                </div>
-                </div>
+                
+                <br></br>
+                <h5>{experience.description}</h5>
+            </div>
+            </div>
             </div>}
             <div>
-                {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p><p>{post.likes}</p>
+                {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p><p>{post.likes} likes</p>
                 <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>   <button onClick={()=>updateCommentLikes(post)}>Like</button>
                 </div>)}
             </div>
