@@ -57,9 +57,9 @@ function ExperiencesCard({experience, onDelete}) {
         </figure>
 
     <Link to = {`/experiences/${experience.id}`}>
-    <button>More Info</button>
+    <button className='fancy-button'>More Info</button>
     </Link>
-    <button onClick={()=>updateLikes(experienceData)}>Like</button>
+    <button className= 'fancy-button'onClick={()=>updateLikes(experienceData)}>Like</button>
     {/* <button onClick={()=>handleDelete(experienceData.id)}>Delete</button> */}
     
     
