@@ -582,7 +582,7 @@ button:focus+.design-container {
   flex-direction: column;
   align-items: center;
   width: 350px;
-  margin: 0 auto;
+  margin-top: 5%;
 }
 
 .signup-form input {
@@ -627,6 +627,7 @@ button:focus+.design-container {
   flex-direction: column;
   align-items: center;
   width: 300px;
+  margin-top: 5%;
 }
 
 .login-form input {
@@ -834,3 +835,4 @@ a{
 .stat-button:hover {
   color: #ccc;
 }
+
