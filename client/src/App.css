@@ -735,9 +735,11 @@ label {
 }
 
 h1 {
+  display: flex;
   font-family: "Montserrat", sans-serif;
   color: #FAF9F6;
   text-decoration: none;
+  text-align: center;
   font-size: 2em;
   text-transform: uppercase;
   font-weight: 500;
@@ -767,22 +769,38 @@ p {
   flex-direction: column;
   /* align-items: center; */
 }
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.show-image{
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
 .content-container {
-  color: #FAF9F6;
-  font-size: 1em;
-  text-transform: uppercase;
-  font-weight:lighter;
-  width: 50%;
-  background-color: #FAF9F6;
-  font-family: "Montserrat", sans-serif;
-background-color: black; /* Solid black background */
-opacity: 0.5; 
-width: 60%;
-border-radius: 24px;
-align-items: center;
+  display: flex;
+    color: #FAF9F6;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: lighter;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    background-color: black;
+    opacity: 0.5;
+    width: 60%;
+    border-radius: 24px;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
 }
 h5{
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight:500;
+  text-align: center;
+}
+.stat-container {
+  text-align: center;
 }

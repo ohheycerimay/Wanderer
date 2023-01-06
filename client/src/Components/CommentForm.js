@@ -48,7 +48,7 @@ function CommentForm({user, setExperience, experience}) {
 
     return (
         <div>
-          
+        
             <form id="form" onSubmit={handleSubmit}>
 
                 <label>Tell us about your experience</label>

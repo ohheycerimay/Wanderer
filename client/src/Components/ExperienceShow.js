@@ -62,19 +62,22 @@ function ExperienceShow({user}) {
             {experience && <div>
             <div className='image-container'>
                 <img className='show-image' src={experience.image_url} alt='{experience.name}' />
-            </div>
+            
             <div className='content-container'>
+                
                 <h1>{experience.name}</h1>
                 
                 <h3>{experience.location}</h3>
                 <br></br>
                 <div stats-container>
                     <h4>${experience.price}</h4>
-                    <h4>{experience.likes}likes</h4>
+                    <br></br>
+                    <h4>{experience.likes} likes</h4>
                 </div>
+                
                 <br></br>
                 <h5>{experience.description}</h5>
-            
+            </div>
             </div>
             </div>}
             <div>
