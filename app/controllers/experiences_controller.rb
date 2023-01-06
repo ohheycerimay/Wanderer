@@ -48,7 +48,7 @@ class ExperiencesController < ApplicationController
 
     private
     def experience_params
-        params.permit(:name, :location, :description, :price, :image_url)
+        params.permit(:name, :location, :description, :price, :image_url, :link)
     end
     def likes
         params.permit(:likes)
