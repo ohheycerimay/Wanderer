@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    skip_before_action :authorize, only: [:destroy]
+    skip_before_action :authorize only, [:index, :show]
     
     def index
         render json: Post.all
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     def update 
         post = Post.find_by_id(params[:id])
         if post
-            post.update(post_params)
+            post.update(likes)
             render json: post
         else
             render json: {error: 'Post not found'}, status: :not_found
@@ -35,7 +35,6 @@ class PostsController < ApplicationController
     end
 
     def destroy
-       
         post = Post.find_by_id(params[:id])
         if post
             post.destroy
@@ -49,8 +48,11 @@ class PostsController < ApplicationController
 
 
     def post_params
-        params.permit(:experience_id, :user_id, :comment, :likes)
+        params.permit(:post_id, :user_id, :comment, :likes)
     end
 
+    def likes
+        params.permit(:likes)
+    end
 
 end
