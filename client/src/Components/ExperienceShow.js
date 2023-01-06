@@ -52,10 +52,6 @@ function ExperienceShow({user}) {
         });
     }
 
-
-    
-
-
     return (
 
         <div className='show-page'>
@@ -77,17 +73,22 @@ function ExperienceShow({user}) {
                 
                 <br></br>
                 <h5>{experience.description}</h5>
+                <br></br>
+                <a className='stat-button' href={experience.link} target="_blank">Click Here to Book</a>
             </div>
             </div>
             </div>}
-            <div>
+            <div className='comment-section'>
                 {experience && experience.posts.map(post => <div className="comment"><p>{post.comment}</p><p>{post.likes} likes</p>
-                <button onClick={()=>handleDelete(post.id)}>DELETE COMMENT</button>   <button onClick={()=>updateCommentLikes(post)}>Like</button>
+                  <button className='stat-button' onClick={()=>updateCommentLikes(post)}>LIKE</button> <button className='stat-button' onClick={()=>handleDelete(post.id)}>DELETE</button> 
                 </div>)}
             </div>
+            <div className='comment-form-div'>
             <CommentForm user={user} experience={experience} setExperience={setExperience}/>
+            </div>
         </div>
     );
+
 }
 
 export default ExperienceShow;
