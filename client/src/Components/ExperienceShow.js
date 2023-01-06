@@ -65,12 +65,16 @@ function ExperienceShow({user}) {
             </div>
             <div className='content-container'>
                 <h1>{experience.name}</h1>
+                
                 <h3>{experience.location}</h3>
-                <h5>{experience.description}</h5>
+                <br></br>
                 <div stats-container>
-                    <h6>${experience.price}</h6>
-                    <h6>{experience.likes}likes</h6>
+                    <h4>${experience.price}</h4>
+                    <h4>{experience.likes}likes</h4>
                 </div>
+                <br></br>
+                <h5>{experience.description}</h5>
+            
             </div>
             </div>}
             <div>
