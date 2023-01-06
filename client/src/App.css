@@ -226,7 +226,7 @@ h2{
 /* .flip-card-container */
 .flip-card-container {
   --primary: hsl(var(--hue), 50%, 50%);
-  --white-1: #;
+  --white-1: #FAF9F6;
   --white-2: #FAF9F6;
   --dark: hsl(var(--hue), 25%, 10%);
 
