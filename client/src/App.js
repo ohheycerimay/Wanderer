@@ -41,7 +41,6 @@ function App() {
     setExperiences(updateExperienceArray)
   }
 
- 
 
   return (
     <div>

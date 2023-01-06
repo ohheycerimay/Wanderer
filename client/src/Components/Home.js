@@ -5,13 +5,17 @@ import Wander from './Wander.png';
 function Home({search, setSearch}) {
     
     return (
-        <div>
-            <div className='search_div' div>
+        <div className="home">
+        
+        <div className='search_div'>
+
+
+            <img className= 'logo' src={Wander} alt="Wander" />
+        
             
             <Search search={search} setSearch={setSearch}  />
         
-        </div>
-            <img className= 'logo' src={Wander} alt="Wander" />
+            </div>
         </div>
     );
 }

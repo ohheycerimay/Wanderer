@@ -21,7 +21,7 @@ function Search({search, setSearch}) {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Link to="/experiences"> 
-        <button onSubmit={handleSubmit} type="submit" className='search-icon'><img src = {magnify} alt = 'search'/></button>
+        <button onSubmit={handleSubmit} type="submit" className='button'>Search Experiences</button>
             </Link>
         </div>
     );
