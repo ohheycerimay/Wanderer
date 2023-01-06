@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    skip_before_action :authorize only, [:index, :show]
+    skip_before_action :authorize, only: [:index, :show]
     
     def index
         render json: Post.all
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 
 
     def post_params
-        params.permit(:post_id, :user_id, :comment, :likes)
+        params.permit(:experience_id, :user_id, :comment, :likes)
     end
 
     def likes
