@@ -12,6 +12,7 @@ function CreateExperience({ experiences, setExperiences }) {
 		description: '',
 		price: '',
 		image_url: '',
+		link: '',
 		likes: '',
 	};
 	const [formData, setFormData] = useState(initialFormState);
